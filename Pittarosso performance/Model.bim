@@ -2050,8 +2050,8 @@
               "RETURN",
               "",
               "CALCULATE([_fx_VenditeNegoziFisici], ",
-              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate , '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])))",
-              "            )"
+              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate , '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC]))",
+              "            "
             ],
             "formatString": "#,0",
             "displayFolder": "00 DETAILS STORES"
@@ -34415,5 +34415,6 @@
         "value": "1"
       }
     ]
-  }
+  },
+  "id": "SemanticModel"
 }
