@@ -15,7 +15,7 @@
     <DeploymentServerName>asazure://westeurope.asazure.windows.net/pittarossoas</DeploymentServerName>
     <DeploymentServerEdition>Developer</DeploymentServerEdition>
     <DeploymentServerVersion>Unknown</DeploymentServerVersion>
-    <DeploymentServerDatabase>Pittarosso performance</DeploymentServerDatabase>
+    <DeploymentServerDatabase>Pittarosso_performance</DeploymentServerDatabase>
     <DeploymentServerCubeName>Modello</DeploymentServerCubeName>
     <DeploymentOptionProcessing>DoNotProcess</DeploymentOptionProcessing>
     <DeploymentOptionTransactionalDeployment>False</DeploymentOptionTransactionalDeployment>

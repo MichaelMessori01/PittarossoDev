@@ -20,7 +20,7 @@
           "AuthenticationKind": "UsernamePassword",
           "kind": "SQL",
           "path": "arealavorosynapse.sql.azuresynapse.net;DBSynapse",
-          "Username": "sqladminuser",
+          "Username": "Sqladminuser",
           "EncryptConnection": true
         }
       }
@@ -1767,7 +1767,8 @@
               "RETURN",
               "",
               "CALCULATE([_fx_VenditeNegoziFisici], ",
-              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC]))"
+              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "            )"
             ],
             "formatString": "#,0",
             "displayFolder": "00 DETAILS STORES"
@@ -1782,7 +1783,8 @@
               "RETURN",
               "",
               "CALCULATE([_fx_VenditeECommerce], ",
-              "            'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC]))"
+              "            'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "            )"
             ],
             "formatString": "#,0",
             "displayFolder": "00 DETAILS E-COMMERCE"
@@ -1804,7 +1806,8 @@
               "RETURN",
               "",
               "CALCULATE([_fx_CostoVendutoNegoziFisici], ",
-              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] >= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC]))",
+              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] >= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "            )",
               ""
             ],
             "formatString": "#,0",
@@ -1820,7 +1823,8 @@
               "RETURN",
               "",
               "CALCULATE([_fx_CostoVendutoECommerce], ",
-              "             'olap vw_fact_RetailEcommerceSales'[OrderDate]>= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate]<= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC]))",
+              "             'olap vw_fact_RetailEcommerceSales'[OrderDate]>= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate]<= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "             )",
               ""
             ],
             "formatString": "#,0",
@@ -1864,8 +1868,9 @@
               "RETURN",
               "",
               "CALCULATE([_fx_Budget], ",
-              "            'olap vw_fact_SalesBudget'[BudgetDate] >= _minDate ,'olap vw_fact_SalesBudget'[BudgetDate]<= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC]))",
-              ""
+              "            'olap vw_fact_SalesBudget'[BudgetDate] >= _minDate ,'olap vw_fact_SalesBudget'[BudgetDate]<= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "            --)",
+              ")"
             ],
             "formatString": "#,0",
             "displayFolder": "01 SALES\\02 NET SALES"
@@ -2153,7 +2158,8 @@
               "RETURN",
               "",
               "CALCULATE([_fx_VenditeNegoziFisici], ",
-              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate , '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC]))"
+              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate , '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])))",
+              "            )"
             ],
             "formatString": "#,0",
             "displayFolder": "00 DETAILS STORES"
@@ -2168,7 +2174,8 @@
               "RETURN",
               "",
               "CALCULATE([_fx_CostoVendutoNegoziFisici], ",
-              "             '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] >= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]<= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC]))",
+              "             '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] >= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]<= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
+              "             )",
               ""
             ],
             "formatString": "#,0",
@@ -2184,7 +2191,8 @@
               "RETURN",
               "",
               "CALCULATE([_fx_CostoVendutoECommerce], ",
-              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC]))",
+              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
+              "             )",
               ""
             ],
             "formatString": "#,0",
@@ -3588,7 +3596,8 @@
               "RETURN",
               "",
               "CALCULATE([_fx_VenditeECommerce], ",
-              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate]<= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC]))"
+              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate]<= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
+              "             )"
             ],
             "formatString": "#,0",
             "displayFolder": "00 DETAILS E-COMMERCE"
