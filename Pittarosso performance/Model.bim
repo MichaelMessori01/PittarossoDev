@@ -28383,14 +28383,6 @@
         "toColumn": "InConsigmentCode"
       },
       {
-        "name": "5142d58d-4415-419a-9615-f71bdb87d9d0",
-        "fromTable": "07 AGEING",
-        "fromColumn": "Sk_Movement",
-        "toTable": "olap vw_dim_Bridge_AgeingMovement",
-        "toColumn": "Sk_Movement",
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
         "name": "b47d69da-4cae-4477-b993-8063a433daa4",
         "fromTable": "olap vw_fact_PurchaseBudget",
         "fromColumn": "bk_Department",
@@ -34697,6 +34689,7 @@
         "members": [
           {
             "memberName": "obj:c1ee5dd5-2208-4e17-99ee-c11d690e25ba@8443b34a-9006-4a52-82e4-3ea4282748f4",
+            "memberId": "obj:c1ee5dd5-2208-4e17-99ee-c11d690e25ba@8443b34a-9006-4a52-82e4-3ea4282748f4#AzureAD",
             "identityProvider": "AzureAD"
           }
         ]
