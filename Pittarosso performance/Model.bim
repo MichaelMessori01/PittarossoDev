@@ -386,151 +386,6 @@
             "summarizeBy": "none"
           },
           {
-            "name": "sk_FidelityCard",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "sk_FidelityCard",
-            "isAvailableInMdx": false
-          },
-          {
-            "name": "sk_FidelityCustomer",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "sk_FidelityCustomer",
-            "isAvailableInMdx": false
-          },
-          {
-            "name": "CxOrderNr",
-            "dataType": "double",
-            "sourceColumn": "CxOrderNr"
-          },
-          {
-            "name": "CxOrderLineNr",
-            "dataType": "double",
-            "sourceColumn": "CxOrderLineNr"
-          },
-          {
-            "name": "SeasonCode",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "SeasonCode"
-          },
-          {
-            "name": "ShippingStatus",
-            "dataType": "string",
-            "sourceColumn": "ShippingStatus"
-          },
-          {
-            "name": "ConfirmationStatus",
-            "dataType": "string",
-            "sourceColumn": "ConfirmationStatus"
-          },
-          {
-            "name": "BillingStatus",
-            "dataType": "string",
-            "sourceColumn": "BillingStatus"
-          },
-          {
-            "name": "PaymentStatus",
-            "dataType": "string",
-            "sourceColumn": "PaymentStatus"
-          },
-          {
-            "name": "GrossDiscUnitVatAmountLC",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "GrossDiscUnitVatAmountLC"
-          },
-          {
-            "name": "GrossDiscGrossVatShipmentAmountLC",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "GrossDiscGrossVatShipmentAmountLC"
-          },
-          {
-            "name": "GrossDiscVatShipmentAmountLC",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "GrossDiscVatShipmentAmountLC"
-          },
-          {
-            "name": "GrossDiscNetVatShipmentAmountLC",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "GrossDiscNetVatShipmentAmountLC"
-          },
-          {
-            "name": "NetDiscGrossVatShipmentAmountLC",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "NetDiscGrossVatShipmentAmountLC"
-          },
-          {
-            "name": "NetDiscVatShipmentAmountLC",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "NetDiscVatShipmentAmountLC"
-          },
-          {
-            "name": "NetDiscNetVatShipmentAmountLC",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "NetDiscNetVatShipmentAmountLC"
-          },
-          {
-            "name": "ReturnPrice",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "ReturnPrice"
-          },
-          {
-            "name": "ShippingDate",
-            "dataType": "dateTime",
-            "sourceColumn": "ShippingDate"
-          },
-          {
-            "name": "ShippedQty",
-            "dataType": "double",
-            "sourceColumn": "ShippedQty"
-          },
-          {
-            "name": "InvoiceDate",
-            "dataType": "dateTime",
-            "sourceColumn": "InvoiceDate"
-          },
-          {
-            "name": "InvoicedQty",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "InvoicedQty"
-          },
-          {
-            "name": "ExpectedDeliveryDate",
-            "dataType": "dateTime",
-            "sourceColumn": "ExpectedDeliveryDate"
-          },
-          {
-            "name": "DeliveryDate",
-            "dataType": "dateTime",
-            "sourceColumn": "DeliveryDate"
-          },
-          {
-            "name": "DeliveredQty",
-            "dataType": "double",
-            "isHidden": true,
-            "sourceColumn": "DeliveredQty"
-          },
-          {
-            "name": "Sk_MovementAgeing",
-            "dataType": "string",
-            "sourceColumn": "Sk_MovementAgeing"
-          },
-          {
-            "name": "bk_RetailEcommerceSales",
-            "dataType": "string",
-            "sourceColumn": "bk_RetailEcommerceSales"
-          },
-          {
             "name": "SalesTypelogyCode",
             "dataType": "string",
             "sourceColumn": "SalesTypelogyCode"
@@ -828,8 +683,7 @@
             "name": "sk_ToDatePP",
             "dataType": "string",
             "isHidden": true,
-            "sourceColumn": "sk_ToDatePP",
-            "isAvailableInMdx": false
+            "sourceColumn": "sk_ToDatePP"
           },
           {
             "name": "ToDatePPOrder",
@@ -916,8 +770,7 @@
             "name": "sk_ToDatePC",
             "dataType": "string",
             "isHidden": true,
-            "sourceColumn": "sk_ToDatePC",
-            "isAvailableInMdx": false
+            "sourceColumn": "sk_ToDatePC"
           },
           {
             "name": "ToDatePCOrder",
@@ -1296,8 +1149,8 @@
         "measures": [
           {
             "name": "_fx_VenditeNegoziFisici",
-            "expression": " SUM('05 MOVEMENTS STORE ATTRIBUTES'[AmountNetDiscNetTax_CC])",
-            "formatString": "#,0.00",
+            "expression": "SUM('05 MOVEMENTS STORE ATTRIBUTES'[AmountNetDiscNetTax_CC])",
+            "formatString": "\"#,0.00\"",
             "isHidden": true,
             "displayFolder": "fx_base"
           },
@@ -1415,7 +1268,7 @@
               " /*SUMX('olap vw_fact_RetailEcommerceSales','olap vw_fact_RetailEcommerceSales'[CostOfGoodSold]*'olap vw_fact_RetailEcommerceSales'[Qty])",
               " mm commentata per provare nuova versione senza sumX che ha previsto di modificare la definizione della colonna CostOfGoodSold da unitaria a totale",
               " */",
-              " SUM('olap vw_fact_RetailEcommerceSales_Perf'[TotalCostOfGoodSoldLC])"
+              " SUM('olap vw_fact_RetailEcommerceSales'[TotalCostOfGoodSoldLC])"
             ],
             "formatString": "#,0.00",
             "isHidden": true,
@@ -1804,7 +1657,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_VenditeNegoziFisici], ",
-              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
               "            )"
             ],
             "formatString": "#,0",
@@ -1820,7 +1673,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_VenditeECommerce], ",
-              "            'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "            'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
               "            )"
             ],
             "formatString": "#,0",
@@ -1843,7 +1696,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_CostoVendutoNegoziFisici], ",
-              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] >= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] >= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
               "            )",
               ""
             ],
@@ -1860,7 +1713,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_CostoVendutoECommerce], ",
-              "             'olap vw_fact_RetailEcommerceSales'[OrderDate]>= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate]<= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "             'olap vw_fact_RetailEcommerceSales'[OrderDate]>= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate]<= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
               "             )",
               ""
             ],
@@ -1905,7 +1758,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_Budget], ",
-              "            'olap vw_fact_SalesBudget'[BudgetDate] >= _minDate ,'olap vw_fact_SalesBudget'[BudgetDate]<= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "            'olap vw_fact_SalesBudget'[BudgetDate] >= _minDate ,'olap vw_fact_SalesBudget'[BudgetDate]<= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
               "            --)",
               ")"
             ],
@@ -1939,7 +1792,7 @@
               "",
               "CALCULATE([_fx_NrScontrini], ",
               "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] >= _minDate , '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate",
-              "            --, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "            , USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
               "            )",
               ""
             ],
@@ -2197,7 +2050,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_VenditeNegoziFisici], ",
-              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate , '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])))",
+              "            '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate , '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])))",
               "            )"
             ],
             "formatString": "#,0",
@@ -2213,7 +2066,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_CostoVendutoNegoziFisici], ",
-              "             '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] >= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]<= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
+              "             '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] >= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]<= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
               "             )",
               ""
             ],
@@ -2230,7 +2083,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_CostoVendutoECommerce], ",
-              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
+              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
               "             )",
               ""
             ],
@@ -2263,7 +2116,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_NrScontrini], ",
-              "             '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
+              "             '05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate]>= _minDate ,'05 MOVEMENTS STORE ATTRIBUTES'[ReceiptDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
               "             )",
               ""
             ],
@@ -2531,7 +2384,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_NrOrdiniECommerce], ",
-              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
+              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_CP'[sk_ToDatePC])",
               "             )",
               ""
             ],
@@ -2548,7 +2401,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_NrOrdiniECommerce], ",
-              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
+              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate] <= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
               "             --)",
               ")"
             ],
@@ -3638,7 +3491,7 @@
               "RETURN",
               "",
               "CALCULATE([_fx_VenditeECommerce], ",
-              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate]<= _maxDate--, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
+              "             'olap vw_fact_RetailEcommerceSales'[OrderDate] >= _minDate ,'olap vw_fact_RetailEcommerceSales'[OrderDate]<= _maxDate, USERELATIONSHIP('olap vw_dim_PeriodDateAssociation'[sk_ToDatePC],'DynamicPeriodSelection_Bridge_ToDate_PP'[sk_ToDatePC])",
               "             )"
             ],
             "formatString": "#,0",
@@ -7592,15 +7445,7 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[AmountNetDiscNetTax_LC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[BillingStatus] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[BillingStatus] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[BillingStatus] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[BillingStatus], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[BillingStatus] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              "",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[CancelQty] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[CancelQty] ) ",
@@ -7628,15 +7473,7 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[CancelReasonCode] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[ConfirmationStatus] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[ConfirmationStatus] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[ConfirmationStatus] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[ConfirmationStatus], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ConfirmationStatus] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[CostOfGoodSold] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[CostOfGoodSold] ) ",
@@ -7664,42 +7501,8 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[CurrencyCode] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[CxOrderLineNr] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[CxOrderLineNr] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[CxOrderLineNr] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[CxOrderLineNr], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[CxOrderLineNr] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[CxOrderNr] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[CxOrderNr] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[CxOrderNr] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[CxOrderNr], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[CxOrderNr] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[DeliveredQty] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[DeliveredQty] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[DeliveredQty] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[DeliveredQty], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[DeliveredQty] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[DeliveryDate] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[DeliveryDate] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[DeliveryDate] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[DeliveryDate], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[DeliveryDate] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[DiscountAmount] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[DiscountAmount] ) ",
@@ -7728,24 +7531,7 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ExchangeRateLCtoCC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[ExpectedDeliveryDate] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[ExpectedDeliveryDate] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[ExpectedDeliveryDate] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[ExpectedDeliveryDate], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ExpectedDeliveryDate] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscGrossVatShipmentAmountLC] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscGrossVatShipmentAmountLC] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[GrossDiscGrossVatShipmentAmountLC] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[GrossDiscGrossVatShipmentAmountLC], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[GrossDiscGrossVatShipmentAmountLC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscGrossVatUnitAmount] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscGrossVatUnitAmount] ) ",
@@ -7755,15 +7541,7 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[GrossDiscGrossVatUnitAmount] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscNetVatShipmentAmountLC] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscNetVatShipmentAmountLC] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[GrossDiscNetVatShipmentAmountLC] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[GrossDiscNetVatShipmentAmountLC], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[GrossDiscNetVatShipmentAmountLC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              "",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscNetVatUnitAmountLC] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscNetVatUnitAmountLC] ) ",
@@ -7773,24 +7551,8 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[GrossDiscNetVatUnitAmountLC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscUnitVatAmountLC] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscUnitVatAmountLC] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[GrossDiscUnitVatAmountLC] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[GrossDiscUnitVatAmountLC], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[GrossDiscUnitVatAmountLC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscVatShipmentAmountLC] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[GrossDiscVatShipmentAmountLC] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[GrossDiscVatShipmentAmountLC] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[GrossDiscVatShipmentAmountLC], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[GrossDiscVatShipmentAmountLC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[InConsignment] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[InConsignment] ) ",
@@ -7800,42 +7562,8 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[InConsignment] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[InvoiceDate] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[InvoiceDate] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[InvoiceDate] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[InvoiceDate], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[InvoiceDate] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[InvoicedQty] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[InvoicedQty] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[InvoicedQty] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[InvoicedQty], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[InvoicedQty] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[NetDiscGrossVatShipmentAmountLC] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[NetDiscGrossVatShipmentAmountLC] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[NetDiscGrossVatShipmentAmountLC] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[NetDiscGrossVatShipmentAmountLC], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[NetDiscGrossVatShipmentAmountLC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[NetDiscNetVatShipmentAmountLC] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[NetDiscNetVatShipmentAmountLC] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[NetDiscNetVatShipmentAmountLC] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[NetDiscNetVatShipmentAmountLC], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[NetDiscNetVatShipmentAmountLC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[NetDiscountGrossVatUnitAmountLC] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[NetDiscountGrossVatUnitAmountLC] ) ",
@@ -7863,15 +7591,7 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[NetDiscUnitVatAmountLC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[NetDiscVatShipmentAmountLC] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[NetDiscVatShipmentAmountLC] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[NetDiscVatShipmentAmountLC] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[NetDiscVatShipmentAmountLC], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[NetDiscVatShipmentAmountLC] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[NetQty] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[NetQty] ) ",
@@ -7962,15 +7682,7 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[PaymentMethodCode] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[PaymentStatus] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[PaymentStatus] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[PaymentStatus] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[PaymentStatus], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[PaymentStatus] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[Qty] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[Qty] ) ",
@@ -8007,15 +7719,7 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ReturnOrderNr] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[ReturnPrice] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[ReturnPrice] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[ReturnPrice] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[ReturnPrice], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ReturnPrice] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[ReturnReason] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[ReturnReason] ) ",
@@ -8052,33 +7756,8 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ReturnTypeCode] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[SeasonCode] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[SeasonCode] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[SeasonCode] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[SeasonCode], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[SeasonCode] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[ShippedQty] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[ShippedQty] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[ShippedQty] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[ShippedQty], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ShippedQty] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[ShippingDate] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[ShippingDate] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[ShippingDate] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[ShippingDate], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ShippingDate] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[ShippingMethod] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[ShippingMethod] ) ",
@@ -8097,15 +7776,7 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ShippingMethodCode] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[ShippingStatus] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[ShippingStatus] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[ShippingStatus] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[ShippingStatus], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[ShippingStatus] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[sk_Company] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[sk_Company] ) ",
@@ -8124,24 +7795,7 @@
               "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[sk_Date] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
               "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
               ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[sk_FidelityCard] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[sk_FidelityCard] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[sk_FidelityCard] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[sk_FidelityCard], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[sk_FidelityCard] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
-              " & IF ( ",
-              "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[sk_FidelityCustomer] ), ",
-              "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[sk_FidelityCustomer] ) ",
-              "    VAR ___r = COUNTROWS ( ___f ) ",
-              "    VAR ___t = TOPN ( MaxFilters, ___f, 'olap vw_fact_RetailEcommerceSales'[sk_FidelityCustomer] )",
-              "    VAR ___d = CONCATENATEX ( ___t, 'olap vw_fact_RetailEcommerceSales'[sk_FidelityCustomer], \", \" )",
-              "    VAR ___x = \"'olap vw_fact_RetailEcommerceSales'[sk_FidelityCustomer] = \" & ___d & IF(___r > MaxFilters, \", ... [\" & ___r & \" items selected]\") & \" \" ",
-              "    RETURN ___x & UNICHAR(13) & UNICHAR(10)",
-              ")",
+              " ",
               " & IF ( ",
               "    ISFILTERED ( 'olap vw_fact_RetailEcommerceSales'[sk_Movement] ), ",
               "    VAR ___f = FILTERS ( 'olap vw_fact_RetailEcommerceSales'[sk_Movement] ) ",
@@ -16063,8 +15717,7 @@
           {
             "name": "Sk_DatePeriod",
             "dataType": "string",
-            "sourceColumn": "Sk_DatePeriod",
-            "isAvailableInMdx": false
+            "sourceColumn": "Sk_DatePeriod"
           }
         ],
         "partitions": [
@@ -16090,14 +15743,12 @@
           {
             "name": "Sk_DatePeriod",
             "dataType": "string",
-            "sourceColumn": "Sk_DatePeriod",
-            "isAvailableInMdx": false
+            "sourceColumn": "Sk_DatePeriod"
           },
           {
             "name": "sk_ToDatePC",
             "dataType": "string",
-            "sourceColumn": "sk_ToDatePC",
-            "isAvailableInMdx": false
+            "sourceColumn": "sk_ToDatePC"
           }
         ],
         "partitions": [
@@ -16123,8 +15774,7 @@
           {
             "name": "Sk_Movement",
             "dataType": "string",
-            "sourceColumn": "Sk_Movement",
-            "isAvailableInMdx": false
+            "sourceColumn": "Sk_Movement"
           }
         ],
         "partitions": [
@@ -16150,8 +15800,7 @@
           {
             "name": "sk_ToDatePC",
             "dataType": "string",
-            "sourceColumn": "sk_ToDatePC",
-            "isAvailableInMdx": false
+            "sourceColumn": "sk_ToDatePC"
           }
         ],
         "partitions": [
@@ -16177,8 +15826,7 @@
           {
             "name": "sk_ToDatePC",
             "dataType": "string",
-            "sourceColumn": "sk_ToDatePC",
-            "isAvailableInMdx": false
+            "sourceColumn": "sk_ToDatePC"
           }
         ],
         "partitions": [
@@ -16204,9 +15852,8 @@
         "columns": [
           {
             "name": "sk_Product",
-            "dataType": "int64",
-            "sourceColumn": "sk_Product",
-            "isAvailableInMdx": false
+            "dataType": "string",
+            "sourceColumn": "sk_Product"
           },
           {
             "name": "Exclude Category 99",
@@ -16223,12 +15870,13 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_dim_Product = Source{[Schema=\"olap\",Item=\"vw_dim_Product\"]}[Data],",
-                "    #\"Rimosse altre colonne\" = Table.SelectColumns(olap_vw_dim_Product,{\"CategoryCode\", \"MacroDepartment\", \"sk_Product\"}),",
-                "    #\"Aggiunta colonna personalizzata\" = Table.AddColumn(#\"Rimosse altre colonne\", \"Exclude Category 99\", each if [CategoryCode] = \"99\" or [MacroDepartment]=\"N/A\" then 0 else 1),",
-                "    #\"Rimosse altre colonne1\" = Table.SelectColumns(#\"Aggiunta colonna personalizzata\",{\"sk_Product\", \"Exclude Category 99\"})",
+                "    #\"Filtrate righe\" = Table.SelectRows(Source, each ([Name] = \"olap.vw_dim_ExcludeFilter\")),",
+                "    #\"Tabella Data espansa\" = Table.ExpandTableColumn(#\"Filtrate righe\", \"Data\", {\"sk_Product\", \"Exclude Category 99\"}, {\"Data.sk_Product\", \"Data.Exclude Category 99\"}),",
+                "    #\"Rimosse colonne\" = Table.RemoveColumns(#\"Tabella Data espansa\",{\"Schema\", \"Item\", \"Kind\", \"Name\"}),",
+                "    #\"Rinominate colonne\" = Table.RenameColumns(#\"Rimosse colonne\",{{\"Data.sk_Product\", \"sk_Product\"}, {\"Data.Exclude Category 99\", \"Exclude Category 99\"}}),",
+                "    #\"Rimossi duplicati\" = Table.Distinct(#\"Rinominate colonne\", {\"sk_Product\"})",
                 "in",
-                "    #\"Rimosse altre colonne1\""
+                "    #\"Rimossi duplicati\""
               ]
             }
           }
@@ -16638,8 +16286,7 @@
             "name": "sk_Product",
             "dataType": "int64",
             "isHidden": true,
-            "sourceColumn": "sk_Product",
-            "isAvailableInMdx": false
+            "sourceColumn": "sk_Product"
           },
           {
             "name": "ProductCode",
@@ -28213,14 +27860,6 @@
         "isActive": false
       },
       {
-        "name": "5942dfa5-a1db-414e-80cc-2806d414ff02",
-        "fromTable": "olap vw_DynamicPeriodSelection_ToDatePP",
-        "fromColumn": "sk_ToDatePP",
-        "toTable": "DynamicPeriodSelection_Bridge_ToDate_PP",
-        "toColumn": "sk_ToDatePC",
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
         "name": "a8e5c486-b130-4992-802c-a24e11b435e8",
         "fromTable": "olap vw_dim_PeriodDateAssociation",
         "fromColumn": "sk_ToDatePC",
@@ -28229,26 +27868,11 @@
         "isActive": false
       },
       {
-        "name": "d53e1d13-b634-4700-ab4b-37ab7db8f45b",
-        "fromTable": "olap vw_DynamicPeriodSelection_ToDatePC",
-        "fromColumn": "sk_ToDatePC",
-        "toTable": "DynamicPeriodSelection_Bridge_ToDate_CP",
-        "toColumn": "sk_ToDatePC",
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
         "name": "30c7a585-8961-47a0-97c5-89ca04ed785d",
         "fromTable": "05 MOVEMENTS STORE ATTRIBUTES",
         "fromColumn": "sk_Movement",
         "toTable": "olap vw_dim_Bridge_AgeingMovement",
         "toColumn": "Sk_Movement"
-      },
-      {
-        "name": "26cf7175-8bb4-49ce-bb1d-99e1fa62760f",
-        "fromTable": "ExcludeFilter",
-        "fromColumn": "sk_Product",
-        "toTable": "03 MERCHANDISE ANALYSIS",
-        "toColumn": "sk_Product"
       },
       {
         "name": "731802ea-a93a-4776-8687-5f07f821a259",
@@ -28630,6 +28254,37 @@
         "fromColumn": "sk_company",
         "toTable": "08 COMPANY",
         "toColumn": "sk_Company"
+      },
+      {
+        "name": "ada4ade3-15cc-4e8a-bc9a-bb4cc192d2f3",
+        "fromTable": "03 MERCHANDISE ANALYSIS",
+        "fromColumn": "sk_Product",
+        "toTable": "ExcludeFilter",
+        "toColumn": "sk_Product"
+      },
+      {
+        "name": "7c40835b-09ec-4b28-8fdf-f4be97d79365",
+        "fromTable": "olap vw_DynamicPeriodSelection_ToDatePP",
+        "fromColumn": "sk_ToDatePP",
+        "toTable": "DynamicPeriodSelection_Bridge_ToDate_PP",
+        "toColumn": "sk_ToDatePC",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "60a79a5d-7d09-40a5-b8b1-08dc8ba34a77",
+        "fromTable": "olap vw_DynamicPeriodSelection_ToDatePC",
+        "fromColumn": "sk_ToDatePC",
+        "toTable": "DynamicPeriodSelection_Bridge_ToDate_CP",
+        "toColumn": "sk_ToDatePC",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "d2c73eef-f882-4cf4-a305-9019f9c2cc2e",
+        "fromTable": "07 AGEING",
+        "fromColumn": "Sk_Movement",
+        "toTable": "olap vw_dim_Bridge_AgeingMovement",
+        "toColumn": "Sk_Movement",
+        "crossFilteringBehavior": "bothDirections"
       }
     ],
     "perspectives": [
@@ -34760,6 +34415,5 @@
         "value": "1"
       }
     ]
-  },
-  "id": "SemanticModel"
+  }
 }
