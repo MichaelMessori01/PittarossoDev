@@ -27828,20 +27828,6 @@
         "crossFilteringBehavior": "bothDirections"
       },
       {
-        "name": "614b76f2-aa76-4bb6-8ddb-c66d9141c1c8",
-        "fromTable": "07 AGEING",
-        "fromColumn": "Sk_DatePeriod",
-        "toTable": "olap vw_dim_Bridge_AgeingPeriod",
-        "toColumn": "Sk_DatePeriod"
-      },
-      {
-        "name": "eed42aaa-df48-419b-af49-fb76132514e6",
-        "fromTable": "olap vw_fact_RetailEcommerceSales",
-        "fromColumn": "sk_Movement",
-        "toTable": "olap vw_dim_Bridge_AgeingMovement",
-        "toColumn": "Sk_Movement"
-      },
-      {
         "name": "51419523-0406-4e62-b64d-82d4c8ebde22",
         "fromTable": "olap vw_fact_RetailEcommerceSales",
         "fromColumn": "sk_Store",
@@ -27886,26 +27872,12 @@
         "isActive": false
       },
       {
-        "name": "30c7a585-8961-47a0-97c5-89ca04ed785d",
-        "fromTable": "05 MOVEMENTS STORE ATTRIBUTES",
-        "fromColumn": "sk_Movement",
-        "toTable": "olap vw_dim_Bridge_AgeingMovement",
-        "toColumn": "Sk_Movement"
-      },
-      {
         "name": "731802ea-a93a-4776-8687-5f07f821a259",
         "fromTable": "olap vw_fact_Movements",
         "fromColumn": "sk_Date",
         "toTable": "01 CALENDAR",
         "toColumn": "sk_Date",
         "isActive": false
-      },
-      {
-        "name": "a84d776e-393b-4640-b485-aaa8784392a3",
-        "fromTable": "olap vw_fact_Movements",
-        "fromColumn": "sk_Movement",
-        "toTable": "olap vw_dim_Bridge_AgeingMovement",
-        "toColumn": "Sk_Movement"
       },
       {
         "name": "52d874f9-0661-445e-af34-4ccacaa317ce",
@@ -28230,14 +28202,6 @@
         "toColumn": "bk_Department"
       },
       {
-        "name": "efbf6ab1-c566-4ceb-a6a7-f6a162da2485",
-        "fromTable": "07 AGEING",
-        "fromColumn": "bk_Ageing",
-        "toTable": "olap vw_Bridge_bk_Ageing",
-        "toColumn": "bk_Ageing",
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
         "name": "44b71703-12a3-4387-95dc-15fefc40b47a",
         "fromTable": "03 MERCHANDISE ANALYSIS",
         "fromColumn": "bk_Department",
@@ -28279,30 +28243,6 @@
         "fromColumn": "sk_Product",
         "toTable": "ExcludeFilter",
         "toColumn": "sk_Product"
-      },
-      {
-        "name": "7c40835b-09ec-4b28-8fdf-f4be97d79365",
-        "fromTable": "olap vw_DynamicPeriodSelection_ToDatePP",
-        "fromColumn": "sk_ToDatePP",
-        "toTable": "DynamicPeriodSelection_Bridge_ToDate_PP",
-        "toColumn": "sk_ToDatePC",
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
-        "name": "60a79a5d-7d09-40a5-b8b1-08dc8ba34a77",
-        "fromTable": "olap vw_DynamicPeriodSelection_ToDatePC",
-        "fromColumn": "sk_ToDatePC",
-        "toTable": "DynamicPeriodSelection_Bridge_ToDate_CP",
-        "toColumn": "sk_ToDatePC",
-        "crossFilteringBehavior": "bothDirections"
-      },
-      {
-        "name": "d2c73eef-f882-4cf4-a305-9019f9c2cc2e",
-        "fromTable": "07 AGEING",
-        "fromColumn": "Sk_Movement",
-        "toTable": "olap vw_dim_Bridge_AgeingMovement",
-        "toColumn": "Sk_Movement",
-        "crossFilteringBehavior": "bothDirections"
       }
     ],
     "perspectives": [
