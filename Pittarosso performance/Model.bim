@@ -20,7 +20,7 @@
           "AuthenticationKind": "UsernamePassword",
           "kind": "SQL",
           "path": "arealavorosynapse.sql.azuresynapse.net;DBSynapse",
-          "Username": "Sqladminuser",
+          "Username": "sqladminuser",
           "EncryptConnection": true
         }
       }
@@ -681,9 +681,10 @@
           },
           {
             "name": "sk_ToDatePP",
-            "dataType": "string",
+            "dataType": "int64",
             "isHidden": true,
-            "sourceColumn": "sk_ToDatePP"
+            "sourceColumn": "sk_ToDatePP",
+            "formatString": "0"
           },
           {
             "name": "ToDatePPOrder",
@@ -700,7 +701,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_DynamicPeriodSelection_ToDatePP = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_ToDatePP\"]}[Data],",
+                "    olap_vw_DynamicPeriodSelection_ToDatePP = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_ToDatePP_Perf\"]}[Data],",
                 "    #\"Rimosse altre colonne\" = Table.SelectColumns(olap_vw_DynamicPeriodSelection_ToDatePP,{\"sk_DynamicPeriodSelection\", \"CalendarType\", \"PeriodType\", \"PeriodObject\", \"Period\", \"ToDatePP\", \"sk_ToDatePP\", \"ToDatePPOrder\"})",
                 "in",
                 "    #\"Rimosse altre colonne\""
@@ -768,9 +769,10 @@
           },
           {
             "name": "sk_ToDatePC",
-            "dataType": "string",
+            "dataType": "int64",
             "isHidden": true,
-            "sourceColumn": "sk_ToDatePC"
+            "sourceColumn": "sk_ToDatePC",
+            "formatString": "0"
           },
           {
             "name": "ToDatePCOrder",
@@ -787,7 +789,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_DynamicPeriodSelection_ToDatePC = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_ToDatePC\"]}[Data],",
+                "    olap_vw_DynamicPeriodSelection_ToDatePC = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_ToDatePC_Perf\"]}[Data],",
                 "    #\"Rimosse altre colonne\" = Table.SelectColumns(olap_vw_DynamicPeriodSelection_ToDatePC,{\"sk_DynamicPeriodSelection\", \"CalendarType\", \"PeriodType\", \"PeriodObject\", \"Period\", \"ToDatePC\", \"sk_ToDatePC\", \"ToDatePCOrder\"})",
                 "in",
                 "    #\"Rimosse altre colonne\""
@@ -860,7 +862,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_DynamicPeriodSelection_Selector = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_Selector\"]}[Data],",
+                "    olap_vw_DynamicPeriodSelection_Selector = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_Selector_perf\"]}[Data],",
                 "    #\"Rimosse altre colonne\" = Table.SelectColumns(olap_vw_DynamicPeriodSelection_Selector,{\"sk_DynamicPeriodSelection\", \"CalendarType\", \"PeriodType\", \"PeriodObject\", \"Period\", \"CalendarTypeOrder\", \"PeriodTypeOrder\", \"PeriodObjectOrder\", \"PeriodOrder\"})",
                 "in",
                 "    #\"Rimosse altre colonne\""
@@ -941,7 +943,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_DynamicPeriodSelection_FromDatePP = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_FromDatePP\"]}[Data],",
+                "    olap_vw_DynamicPeriodSelection_FromDatePP = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_FromDatePP_Perf\"]}[Data],",
                 "    #\"Rimosse altre colonne\" = Table.SelectColumns(olap_vw_DynamicPeriodSelection_FromDatePP,{\"sk_DynamicPeriodSelection\", \"CalendarType\", \"PeriodType\", \"PeriodObject\", \"Period\", \"FromDatePP\", \"FromDatePPOrder\"})",
                 "in",
                 "    #\"Rimosse altre colonne\""
@@ -1036,7 +1038,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_DynamicPeriodSelection_FromDatePC = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_FromDatePC\"]}[Data],",
+                "    olap_vw_DynamicPeriodSelection_FromDatePC = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_FromDatePC_Perf\"]}[Data],",
                 "    #\"Rimosse altre colonne\" = Table.SelectColumns(olap_vw_DynamicPeriodSelection_FromDatePC,{\"sk_DynamicPeriodSelection\", \"CalendarType\", \"PeriodType\", \"PeriodObject\", \"Period\", \"FromDatePC\", \"FromDatePCOrder\"})",
                 "in",
                 "    #\"Rimosse altre colonne\""
@@ -15716,8 +15718,9 @@
         "columns": [
           {
             "name": "Sk_DatePeriod",
-            "dataType": "string",
-            "sourceColumn": "Sk_DatePeriod"
+            "dataType": "int64",
+            "sourceColumn": "Sk_DatePeriod",
+            "formatString": "0"
           }
         ],
         "partitions": [
@@ -15729,7 +15732,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_dim_Bridge_AgeingPeriod = Source{[Schema=\"olap\",Item=\"vw_dim_Bridge_AgeingPeriod\"]}[Data]",
+                "    olap_vw_dim_Bridge_AgeingPeriod = Source{[Schema=\"olap\",Item=\"vw_dim_Bridge_AgeingPeriod_Perf\"]}[Data]",
                 "in",
                 "    olap_vw_dim_Bridge_AgeingPeriod"
               ]
@@ -15742,13 +15745,15 @@
         "columns": [
           {
             "name": "Sk_DatePeriod",
-            "dataType": "string",
-            "sourceColumn": "Sk_DatePeriod"
+            "dataType": "int64",
+            "sourceColumn": "Sk_DatePeriod",
+            "formatString": "0"
           },
           {
             "name": "sk_ToDatePC",
-            "dataType": "string",
-            "sourceColumn": "sk_ToDatePC"
+            "dataType": "int64",
+            "sourceColumn": "sk_ToDatePC",
+            "formatString": "0"
           }
         ],
         "partitions": [
@@ -15760,7 +15765,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_dim_PeriodDateAssociation = Source{[Schema=\"olap\",Item=\"vw_dim_PeriodDateAssociation\"]}[Data]",
+                "    olap_vw_dim_PeriodDateAssociation = Source{[Schema=\"olap\",Item=\"vw_dim_PeriodDateAssociation_Perf\"]}[Data]",
                 "in",
                 "    olap_vw_dim_PeriodDateAssociation"
               ]
@@ -15799,8 +15804,9 @@
         "columns": [
           {
             "name": "sk_ToDatePC",
-            "dataType": "string",
-            "sourceColumn": "sk_ToDatePC"
+            "dataType": "int64",
+            "sourceColumn": "sk_ToDatePC",
+            "formatString": "0"
           }
         ],
         "partitions": [
@@ -15812,7 +15818,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_DynamicPeriodSelection_Bridge_ToDate = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_Bridge_ToDate\"]}[Data]",
+                "    olap_vw_DynamicPeriodSelection_Bridge_ToDate = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_Bridge_ToDate_Perf\"]}[Data]",
                 "in",
                 "    olap_vw_DynamicPeriodSelection_Bridge_ToDate"
               ]
@@ -15825,8 +15831,9 @@
         "columns": [
           {
             "name": "sk_ToDatePC",
-            "dataType": "string",
-            "sourceColumn": "sk_ToDatePC"
+            "dataType": "int64",
+            "sourceColumn": "sk_ToDatePC",
+            "formatString": "0"
           }
         ],
         "partitions": [
@@ -15838,7 +15845,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_DynamicPeriodSelection_Bridge_ToDate = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_Bridge_ToDate\"]}[Data]",
+                "    olap_vw_DynamicPeriodSelection_Bridge_ToDate = Source{[Schema=\"olap\",Item=\"vw_DynamicPeriodSelection_Bridge_ToDate_Perf\"]}[Data]",
                 "in",
                 "    olap_vw_DynamicPeriodSelection_Bridge_ToDate"
               ]
@@ -17718,8 +17725,9 @@
           },
           {
             "name": "Sk_DatePeriod",
-            "dataType": "string",
-            "sourceColumn": "Sk_DatePeriod"
+            "dataType": "int64",
+            "sourceColumn": "Sk_DatePeriod",
+            "formatString": "0"
           },
           {
             "type": "calculated",
@@ -17771,6 +17779,16 @@
             "name": "bk_Ageing",
             "dataType": "string",
             "sourceColumn": "bk_Ageing"
+          },
+          {
+            "name": "CommercialSemesterStartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CommercialSemesterStartDate"
+          },
+          {
+            "name": "CommercialSemesterEndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CommercialSemesterEndDate"
           }
         ],
         "partitions": [
@@ -17782,7 +17800,7 @@
               "expression": [
                 "let",
                 "    Source = #\"SQL/arealavorosynapse sql azuresynapse net;DBSynapse\",",
-                "    olap_vw_dim_Ageing = Source{[Schema=\"olap\",Item=\"vw_dim_Ageing\"]}[Data]",
+                "    olap_vw_dim_Ageing = Source{[Schema=\"olap\",Item=\"vw_dim_Ageing_perf\"]}[Data]",
                 "in",
                 "    olap_vw_dim_Ageing"
               ]
