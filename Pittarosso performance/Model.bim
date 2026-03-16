@@ -20,7 +20,7 @@
           "AuthenticationKind": "UsernamePassword",
           "kind": "SQL",
           "path": "arealavorosynapse.sql.azuresynapse.net;DBSynapse",
-          "Username": "sqladminuser",
+          "Username": "Sqladminuser",
           "EncryptConnection": true
         }
       }
@@ -18537,22 +18537,19 @@
           },
           {
             "name": "Receipt_Part2",
-            "dataType": "int64",
+            "dataType": "string",
             "sourceColumn": "Receipt_Part2",
-            "formatString": "0",
             "summarizeBy": "none"
           },
           {
             "name": "Receipt_Part2_Len",
             "dataType": "int64",
             "sourceColumn": "Receipt_Part2_Len",
-            "formatString": "0",
             "summarizeBy": "none"
           },
           {
             "name": "sk_AgeingMovement",
             "dataType": "int64",
-            "isNullable": false,
             "sourceColumn": "sk_AgeingMovement",
             "formatString": "0",
             "summarizeBy": "none"
