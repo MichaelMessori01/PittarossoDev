@@ -18544,12 +18544,14 @@
             "name": "Receipt_Part2_Len",
             "dataType": "int64",
             "sourceColumn": "Receipt_Part2_Len",
+            "formatString": "0",
             "summarizeBy": "none"
           },
           {
             "name": "sk_AgeingMovement",
             "dataType": "int64",
             "sourceColumn": "sk_AgeingMovement",
+            "formatString": "0",
             "summarizeBy": "none"
           }
         ],
