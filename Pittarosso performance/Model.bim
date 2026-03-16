@@ -18130,7 +18130,8 @@
           {
             "name": "ReceiptLineNr",
             "dataType": "string",
-            "sourceColumn": "ReceiptLineNr"
+            "sourceColumn": "ReceiptLineNr",
+            "summarizeBy": "none"
           },
           {
             "name": "CashRegisterNr",
@@ -18144,6 +18145,7 @@
             "dataType": "dateTime",
             "sourceColumn": "ReceiptDate",
             "formatString": "Short Date",
+            "summarizeBy": "none",
             "annotations": [
               {
                 "name": "Format",
@@ -18154,12 +18156,14 @@
           {
             "name": "MovementType",
             "dataType": "string",
-            "sourceColumn": "MovementType"
+            "sourceColumn": "MovementType",
+            "summarizeBy": "none"
           },
           {
             "name": "CurrencyCode",
             "dataType": "string",
-            "sourceColumn": "CurrencyCode"
+            "sourceColumn": "CurrencyCode",
+            "summarizeBy": "none"
           },
           {
             "name": "EanCode",
@@ -18177,13 +18181,15 @@
             "name": "UnitPriceGrossDiscGrossTax_LC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "UnitPriceGrossDiscGrossTax_LC"
+            "sourceColumn": "UnitPriceGrossDiscGrossTax_LC",
+            "summarizeBy": "none"
           },
           {
             "name": "UnitPriceNetDiscGrossTax_LC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "UnitPriceNetDiscGrossTax_LC"
+            "sourceColumn": "UnitPriceNetDiscGrossTax_LC",
+            "summarizeBy": "none"
           },
           {
             "name": "VatRate",
@@ -18195,19 +18201,22 @@
             "name": "UnitVatAmount_LC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "UnitVatAmount_LC"
+            "sourceColumn": "UnitVatAmount_LC",
+            "summarizeBy": "none"
           },
           {
             "name": "UnitPriceNetDiscNetTax_LC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "UnitPriceNetDiscNetTax_LC"
+            "sourceColumn": "UnitPriceNetDiscNetTax_LC",
+            "summarizeBy": "none"
           },
           {
             "name": "UnitDiscount_LC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "UnitDiscount_LC"
+            "sourceColumn": "UnitDiscount_LC",
+            "summarizeBy": "none"
           },
           {
             "name": "AmountGrossDiscGrossTax_LC",
@@ -18260,31 +18269,36 @@
             "name": "UnitVatAmount_CC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "UnitVatAmount_CC"
+            "sourceColumn": "UnitVatAmount_CC",
+            "summarizeBy": "none"
           },
           {
             "name": "UnitPriceNetDiscNetTax_CC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "UnitPriceNetDiscNetTax_CC"
+            "sourceColumn": "UnitPriceNetDiscNetTax_CC",
+            "summarizeBy": "none"
           },
           {
             "name": "UnitDiscount_CC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "UnitDiscount_CC"
+            "sourceColumn": "UnitDiscount_CC",
+            "summarizeBy": "none"
           },
           {
             "name": "AmountGrossDiscGrossTax_CC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "AmountGrossDiscGrossTax_CC"
+            "sourceColumn": "AmountGrossDiscGrossTax_CC",
+            "summarizeBy": "none"
           },
           {
             "name": "AmountNetDiscGrossTax_CC",
             "dataType": "double",
             "isHidden": true,
-            "sourceColumn": "AmountNetDiscGrossTax_CC"
+            "sourceColumn": "AmountNetDiscGrossTax_CC",
+            "summarizeBy": "none"
           },
           {
             "name": "VatAmount_CC",
@@ -18525,6 +18539,18 @@
             "dataType": "int64",
             "sourceColumn": "Receipt_Part2",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Receipt_Part2_Len",
+            "dataType": "int64",
+            "sourceColumn": "Receipt_Part2_Len",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sk_AgeingMovement",
+            "dataType": "int64",
+            "sourceColumn": "sk_AgeingMovement",
+            "summarizeBy": "none"
           }
         ],
         "partitions": [
@@ -18602,6 +18628,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
@@ -18764,7 +18792,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20251101' AND '20251130'"
@@ -18926,7 +18955,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20251001' AND '20251031'"
@@ -19088,7 +19118,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20250901' AND '20250930'"
@@ -19251,7 +19282,8 @@
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
                 "",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20250801' AND '20250831'"
               ],
@@ -19412,7 +19444,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20250701' AND '20250731'"
@@ -19574,7 +19607,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20250601' AND '20250630'"
@@ -19736,7 +19770,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20250501' AND '20250531'"
@@ -19899,7 +19934,8 @@
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
                 "",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20250401' AND '20250430'"
               ],
@@ -20060,7 +20096,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20250301' AND '20250331'"
@@ -20222,7 +20259,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20250201' AND '20250228'"
@@ -20384,7 +20422,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20250101' AND '20250131'"
@@ -20546,7 +20585,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20241201' AND '20241231'"
@@ -20708,7 +20748,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20241101' AND '20241130'"
@@ -20870,7 +20911,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20241001' AND '20241031'"
@@ -21032,7 +21074,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20240901' AND '20240930'"
@@ -21194,7 +21237,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20240801' AND '20240831'"
@@ -21356,7 +21400,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20240701' AND '20240731'"
@@ -21518,7 +21563,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20240601' AND '20240630'"
@@ -21680,7 +21726,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20240501' AND '20240531'"
@@ -21842,7 +21889,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20240401' AND '20240430'"
@@ -22004,7 +22052,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20240301' AND '20240331'"
@@ -22166,7 +22215,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20240201' AND '20240229'"
@@ -22328,7 +22378,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20240101' AND '20240131'"
@@ -22490,7 +22541,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20260101' AND '20260131'"
@@ -22652,7 +22704,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20260201' AND '20260228'"
@@ -22814,7 +22867,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20260301' AND '20260331'"
@@ -22976,7 +23030,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20260401' AND '20260430'"
@@ -23138,7 +23193,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20260501' AND '20260531'"
@@ -23300,7 +23356,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20260601' AND '20260630'"
@@ -23462,7 +23519,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20260701' AND '20260731'"
@@ -23624,7 +23682,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20260801' AND '20260831'"
@@ -23786,7 +23845,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20260901' AND '20260930'"
@@ -23949,7 +24009,8 @@
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
                 "",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20261001' AND '20261031'"
               ],
@@ -24111,7 +24172,8 @@
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
                 "",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20261101' AND '20261130'"
               ],
@@ -24272,7 +24334,8 @@
                 "      ,[FlagManualHeaderDiscount]",
                 "    ,Receipt_Part1",
                 ",Receipt_Part2",
-                "",
+                ",Receipt_Part2_Len",
+                ",sk_AgeingMovement",
                 "",
                 "  FROM [olap].[vw_fact_RetailSales_Perf]",
                 "  WHERE [ReceiptDate] BETWEEN '20261201' AND '20261231'"
