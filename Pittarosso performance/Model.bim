@@ -18532,12 +18532,14 @@
             "name": "Receipt_Part1",
             "dataType": "int64",
             "sourceColumn": "Receipt_Part1",
+            "formatString": "0",
             "summarizeBy": "none"
           },
           {
             "name": "Receipt_Part2",
             "dataType": "int64",
             "sourceColumn": "Receipt_Part2",
+            "formatString": "0",
             "summarizeBy": "none"
           },
           {
@@ -18550,6 +18552,7 @@
           {
             "name": "sk_AgeingMovement",
             "dataType": "int64",
+            "isNullable": false,
             "sourceColumn": "sk_AgeingMovement",
             "formatString": "0",
             "summarizeBy": "none"
